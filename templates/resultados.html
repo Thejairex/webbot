@@ -5,7 +5,24 @@
 {% include 'navbar.html' %}
 
 <main>
-
+    <table class="table table-hover table-striped-columns">
+        <thead>
+            <th scope="col">ID</th>
+            <th scope="col">ID de Orden</th>
+            <th scope="col">Resultado</th>
+            <th scope="col">Cantidad</th>
+        </thead>
+        <tbody>
+            {% for data in datas %}
+            <tr>
+                <th scope="row">{{data[0]}}</td>
+                <td>{{data[1]}}</td>
+                <td>{{data[2]}}</td>
+                <td>{{data[3]}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </main>
 
 
