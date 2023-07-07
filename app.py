@@ -1,10 +1,8 @@
 from flask import Flask, render_template
-from iqoption import Iq
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 mysql = MySQL(app)
-iq = Iq()
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
