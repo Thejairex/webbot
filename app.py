@@ -4,22 +4,20 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 mysql = MySQL(app)
 
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_HOST'] = 'Thejairex.mysql.pythonanywhere-services.com'
+app.config['MYSQL_USER'] = 'Thejairex'
+app.config['MYSQL_PASSWORD'] = 'aiwa2015'
 app.config['MYSQL_DB'] = 'market'
-app.secret_key = "OtakuTeca"
+# app.secret_key = "OtakuTeca"
 
-
+cur = mysql.connection.cursor()
 def fetch_ordens():
-    cur = mysql.connection.cursor()
     query = "SELECT * FROM ordens ORDER BY id_orden DESC"
     cur.execute(query)
     datas = cur.fetchall()
     return datas
 
 def fecth_result():
-    cur = mysql.connection.cursor()
     query = "SELECT * FROM executeds ORDER BY id_executed DESC"
     cur.execute(query)
     datas = cur.fetchall()
