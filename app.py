@@ -37,7 +37,7 @@ def resultados():
 
 @app.route("/ordenes/merge")
 def ordenes_merge():
-    return render_template("add_item_shop.html")
+    return render_template("merge_ordenes.html")
 
 @app.route("/api/merge_ordenes", methods=["POST"])
 def add_item_shop():

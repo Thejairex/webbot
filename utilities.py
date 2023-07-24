@@ -7,6 +7,12 @@ class Utils:
             last = [last_orden, last_executed]
             add = False
             list = []
+            
+            if not last_orden:
+                add = True
+            if not last_executed:
+                add = True
+                
             for linea in lineas:
                 if f'INSERT INTO "{table}"' in linea:
                     orden = linea.replace(';','')
