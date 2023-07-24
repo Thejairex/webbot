@@ -1,0 +1,20 @@
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+
+{% include 'layouts/navbar.html' %}
+
+<main class=" m-0 p-5 ">
+    <h2 class=" text-light">Actualizar Base de datos</h2>
+
+    <form action="/api/merge_ordenes" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="imageFile" class="form-label">Subir .Sql</label>
+            <input class="form-control rounded bg-dark text-light" type="file"
+                id="imageFile" name="sql">
+        </div>
+        <input type="submit" value="Actualizar" class="btn btn-dark">
+    </form>
+</main>
+
+{% endblock body %}

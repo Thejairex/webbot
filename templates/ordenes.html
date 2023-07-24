@@ -1,29 +1,30 @@
-{% extends 'layout.html' %}
+{% extends 'layouts/layout.html' %}
 
 {% block body %}
 
-{% include 'navbar.html' %}
+{% include 'layouts/navbar.html' %}
 
 <main>
+    <a href="/ordenes/merge" class="btn btn-success m-1"> + </a>
     <table class="table table-hover table-striped-columns">
         <thead>
-            <th scope="col">ID</th>
+            <th scope="col">#</th>
             <th scope="col">Modulo</th>
-            <th scope="col">Activo/Par</th>
+            <th scope="col">Activo</th>
             <th scope="col">Hora</th>
-            <th scope="col">Accion</th>
             <th scope="col">Dia</th>
+            <th scope="col">Operacion</th>
             <th scope="col">Estado</th>
         </thead>
         <tbody>
             {% for data in datas %}
             <tr>
-                <th scope="row">{{data[0]}}</td>
+                <th>{{data[0]}}</th>
                 <td>{{data[1]}}</td>
                 <td>{{data[2]}}</td>
                 <td>{{data[3]}}</td>
-                <td>{{data[4]}}</td>
                 <td>{{data[5]}}</td>
+                <td>{{data[4]}}</td>
                 <td>{{data[6]}}</td>
             </tr>
             {% endfor %}
