@@ -14,12 +14,22 @@
         </thead>
         <tbody>
             {% for data in datas %}
-            <tr>
-                <th scope="row">{{data[0]}}</td>
-                <td>{{data[1]}}</td>
-                <td>{{data[2]}}</td>
-                <td>{{data[3]}}</td>
-            </tr>
+                {% if data[3] > 0 %}
+                <tr class="table-success">
+                    <th scope="row">{{data[0]}}</td>
+                    <td>{{data[1]}}</td>
+                    <td>{{data[2]}}</td>
+                    <td>{{data[3]}}</td>
+                </tr>
+
+            {% else %}
+                <tr class="table-danger">
+                    <th scope="row">{{data[0]}}</td>
+                    <td>{{data[1]}}</td>
+                    <td>{{data[2]}}</td>
+                    <td>{{data[3]}}</td>
+                </tr>
+            {% endif%}
             {% endfor %}
         </tbody>
     </table>
